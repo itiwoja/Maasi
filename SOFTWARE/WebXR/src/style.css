@@ -1,0 +1,62 @@
+@import '@fontsource-variable/noto-sans-jp';
+
+:root { font-family: 'Noto Sans JP Variable', system-ui, sans-serif; color: #dce8e9; background: #0b1d24; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+#app { max-width: 1600px; margin: auto; padding: 28px 32px 16px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.eyebrow { color: #71cbb9; font-size: 11px; letter-spacing: .18em; font-weight: 700; }
+h1 { margin: 6px 0 0; font-size: 30px; letter-spacing: -.03em; }
+h1 span { color: #a1b7bf; font-size: 16px; font-weight: 400; margin-left: 12px; }
+.badge { font-size: 12px; color: #a1b7bf; padding: 10px 16px; border: 1px solid #29434d; border-radius: 24px; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border: 1px solid #29434d; border-radius: 16px; overflow: hidden; background: #102c35; }
+#viewport { height: 820px; position: relative; overflow: hidden; }
+#viewport canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+#xr-status { position: absolute; top: 18px; left: 18px; right: 18px; padding: 8px 12px; border-radius: 6px; background: #102730dd; pointer-events: none; font-size: 12px; color: #d1e1e5; z-index: 1; }
+aside { padding: 26px; background: #112730; max-height: 820px; overflow-y: auto; scrollbar-color: #426976 #112730; }
+h2 { font-size: 22px; margin: 10px 0; }
+#instruction { font-size: 13px; color: #b2c6cc; line-height: 1.85; min-height: 72px; }
+.guide-card { border: 1px solid #36545f; border-radius: 10px; background: #17343d; padding: 14px; }
+.guide-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.guide-heading h3 { margin: 0; font-size: 14px; }
+#guide-mode { color: #8cdcca; font-size: 10px; }
+.guide-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 14px 0; }
+.guide-tabs button { padding: 8px 3px; font-size: 10px; }
+.guide-tabs button[aria-pressed="true"] { color: #a3f1d9; background: #296859; border-color: #6abb9f; }
+#guide-content { font-size: 12px; color: #c4d6dc; line-height: 1.85; }
+#guide-title { margin: 12px 0; font-size: 14px; color: #eef6f4; }
+#guide-content h5 { font-size: 11px; color: #8cdcca; margin: 14px 0 5px; }
+#guide-how, #guide-overview { padding-left: 20px; margin: 0; }
+#guide-how li, #guide-overview li { padding: 4px 0; }
+#guide-overview li.current { color: #a3f1d9; font-weight: 700; }
+#guide-content p { margin: 0; }
+.guide-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+.guide-nav button { font-size: 11px; padding: 8px; }
+.input-help { margin: 18px 0; color: #b2c6cc; font-size: 11px; line-height: 1.8; }
+.input-help summary { cursor: pointer; color: #dce8e9; }
+dl { margin: 12px 0; }
+dt { color: #8cdcca; font-weight: 700; margin-top: 12px; }
+dd { margin: 3px 0 0; }
+.phase-note { font-size: 11px; color: #9bddd0; line-height: 1.8; }
+#steps { list-style: none; padding: 0; margin: 22px 0; counter-reset: step; }
+#steps li { counter-increment: step; color: #76909a; font-size: 12px; padding: 6px 0; }
+#steps li::before { content: counter(step, decimal-leading-zero); display: inline-block; width: 28px; font-size: 10px; }
+#steps li.active { color: #8ce1c8; font-weight: 700; }
+#steps li.done { color: #beced2; }
+#steps li.done::before { content: '✓'; color: #71cbb9; }
+.telemetry { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #29434d; border-bottom: 1px solid #29434d; padding: 16px 0; margin-bottom: 18px; }
+.telemetry small { display: block; color: #90aab3; font-size: 11px; }
+.telemetry strong { display: block; font-size: 22px; margin-top: 5px; font-variant-numeric: tabular-nums; }
+.telemetry strong span { font-size: 10px; }
+#controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+button { font: inherit; font-size: 12px; padding: 11px 8px; border: 1px solid #36545f; border-radius: 7px; background: #21414c; color: #e2eeee; cursor: pointer; }
+button:hover { background: #305a66; }
+button:focus-visible { outline: 2px solid #8ce1c8; outline-offset: 3px; }
+button[data-action="coat"], button[data-action="start"] { background: #296859; border-color: #458f7f; }
+button[data-action="stop"] { background: #743d43; border-color: #9b5960; }
+button[aria-disabled="true"] { opacity: .45; }
+#feedback { color: #9bddd0; font-size: 12px; line-height: 1.7; min-height: 42px; }
+.secondary { width: 100%; background: transparent; }
+footer { display: flex; justify-content: space-between; gap: 20px; color: #9db3bb; font-size: 11px; margin: 16px 0; line-height: 1.8; }
+.note { font-size: 10px; color: #78949e; }
+@media (max-width: 900px) { #app { padding: 16px; } .workspace { grid-template-columns: 1fr; } #viewport { height: 480px; min-height: 0; } aside { max-height: none; overflow: visible; } .badge { display: none; } footer { flex-direction: column; gap: 4px; } }

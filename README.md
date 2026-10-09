@@ -86,6 +86,14 @@ Here we present Maasi, an affordable Spin Coater that is easy to build and has a
 
 ## Getting Started
 
+### WebXR 操作練習（Meta Quest 3）
+
+Maasiの3Dデータを使った、ブラウザー上の操作練習シミュレーターを
+[`SOFTWARE/WebXR/`](SOFTWARE/WebXR/README.md) に追加しています。
+Meta Quest 3のQuest BrowserではVRコントローラー、PCではマウスで操作できます。
+蓋の開閉、試料設置、滴下、塗布、停止、回収の手順を練習できます。
+起動方法と再現範囲はリンク先を参照してください。
+
   
 
 ### 3D printing components and purchasing hardware
